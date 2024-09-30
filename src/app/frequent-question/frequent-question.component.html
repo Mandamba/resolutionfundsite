@@ -1,0 +1,57 @@
+<section class="py-24" style="background-color: #BEA37D;">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row justify-between items-start gap-x-16 gap-y-5 xl:gap-28 mx-auto max-w-full">
+      <div class="w-full lg:w-2/5" data-aos="fade-right" data-aos-duration="1500">
+        <img src="/images/question.png" alt="FAQ tailwind section" class="w-full rounded-xl" />
+      </div>
+      <div class="w-full lg:w-3/5" data-aos="fade-left" data-aos-duration="1500">
+        <div class="lg:max-w-3xl">
+          <div class="mb-6 lg:mb-16">
+            <h2 class="text-5xl font-bold text-cyan-800 leading-[3.5rem] mb-5 lg:text-left" data-aos="fade-up" data-aos-duration="1500">
+              Perguntas frequentes
+            </h2>
+          </div>
+          <div class="accordion-group" style="width: 100%;">
+            <div *ngFor="let item of visibleFaqs; let i = index" class="accordion py-4 border-b border-solid border-gray-200" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+              <button
+                (click)="toggleAccordion(i)"
+                class="accordion-toggle group flex items-center justify-between text-xl leading-8 text-white w-full transition duration-500 bg-black hover:bg-cyan-800 text-left rounded-[40px] p-4"
+                [ngClass]="{'bg-cyan-800 text-white font-bold': activeIndex === i, 'bg-black text-white': activeIndex !== i}"
+                style="width: calc(100% - 2rem);"
+              >
+                <h5 class="text-left w-full text-white">{{ item.question }}</h5> <!-- Text color explicitly set to white -->
+                <svg
+                  class="text-white transition duration-500 group-hover:text-white"
+                  [ngClass]="{'rotate-180': activeIndex === i}"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </button>
+              <div
+                [ngClass]="{'max-h-40': activeIndex === i, 'max-h-0': activeIndex !== i}"
+                class="accordion-content overflow-hidden transition-all duration-500"
+                style="background-color: #BEA37D;"
+              >
+                <p class="text-base text-white text-left py-4">{{ item.answer }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8 flex justify-between">
+            <button *ngIf="hasMoreFaqs" (click)="loadMore()" class="px-4 py-2 bg-cyan-800 text-white rounded-lg shadow-lg hover:bg-cyan-700 transition duration-300" data-aos="fade-up" data-aos-duration="1500">
+              Carregar mais
+            </button>
+
+            <button *ngIf="canLoadLess" (click)="loadLess()" class="px-4 py-2 bg-cyan-800 text-white rounded-lg shadow-lg hover:bg-cyan-700 transition duration-300" data-aos="fade-up" data-aos-duration="1500">
+              Carregar menos
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

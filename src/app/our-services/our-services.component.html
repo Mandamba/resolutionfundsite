@@ -1,0 +1,91 @@
+<div class="container bg-gray-50 mx-auto px-4 py-16">
+  <app-banner-info-card
+    [title]="'Estrutura e Operações da Instituição'"
+    [description]="'No Fundo de Resolução, trabalhamos para fortalecer o sistema financeiro e torná-lo mais resiliente.'">
+  </app-banner-info-card>
+
+  <div class="bg-gray-50 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Card 1 -->
+    <div data-aos="fade-up" data-aos-duration="1000" class="bg-white rounded-lg shadow-lg p-8 flex flex-col justify-between">
+      <div class="text-center">
+        <div class="bg-cyan-800 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+          <span class="material-icons align-middle w-10 h-10 text-white">account_balance</span>
+        </div>
+        <h3 class="text-xl font-bold mb-4">MISSÃO E FUNÇÕES</h3>
+        <p class="text-gray-600 mb-6">O FR foi criado em 2022 com a missão de prestar apoio financeiro às medidas de resolução a serem adoptadas pelo Banco Nacional de Angola</p>
+      </div>
+      <a (click)="scrollToTop()" routerLink="/mission" class="text-center mt-6 px-6 py-3 bg-cyan-800 text-white rounded hover:bg-cyan-900 transition">Saiba mais</a>
+    </div>
+
+    <!-- Card 2 -->
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" class="bg-white rounded-lg shadow-lg p-8 flex flex-col justify-between">
+      <div class="text-center">
+        <div class="bg-cyan-800 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 4h18v12H3V4z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16l18 0"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-4">ORGÂNICA E FUNCIONAMENTO</h3>
+        <p class="text-gray-600 mb-6">O Fundo tem a sua sede em Luanda e funciona junto do Banco Nacional de Angola, que assegura, nos termos do disposto no n.º 1 do artigo 311</p>
+      </div>
+      <a (click)="scrollToTop()" routerLink="/organic-and-functionality" class="text-center mt-6 px-6 py-3 bg-cyan-800 text-white rounded hover:bg-cyan-900 transition">Saiba mais</a>
+    </div>
+
+    <!-- Card 3 -->
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="bg-white rounded-lg shadow-lg p-8 flex flex-col justify-between">
+      <div class="text-center">
+        <div class="bg-cyan-800 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+          <span class="material-icons align-middle w-10 h-10 text-white">people</span>
+        </div>
+        <h3 class="text-xl font-bold mb-4">PARTICIPANTES</h3>
+        <p class="text-gray-600 mb-6">A utilização de recursos financeiros do Estado requer a apresentação pelo Fundo ao membro do Executivo do Departamento Ministerial</p>
+      </div>
+      <a (click)="scrollToTop()" routerLink="/participants" class="text-center mt-6 px-6 py-3 bg-cyan-800 text-white rounded hover:bg-cyan-900 transition">Saiba mais</a>
+    </div>
+
+    <!-- Card 4 -->
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="bg-white rounded-lg shadow-lg p-8 flex flex-col justify-between">
+      <div class="text-center">
+        <div class="bg-cyan-800 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 15h16v4H4v-4z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 10h16v4H4v-4z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v4H4V5z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-4">RECURSOS FINANCEIROS</h3>
+        <p class="text-gray-600 mb-6">O Fundo é gerido pela Comissão Directiva composta por 3 membros, sendo um membro do Conselho de Administração do Banco Nacional de Angola</p>
+      </div>
+      <a (click)="scrollToTop()" routerLink="/finantial-resourecs" class="text-center mt-6 px-6 py-3 bg-cyan-800 text-white rounded hover:bg-cyan-900 transition">Saiba mais</a>
+    </div>
+
+    <!-- Card 5 -->
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="bg-white rounded-lg shadow-lg p-8 flex flex-col justify-between">
+      <div class="text-center">
+        <div class="bg-cyan-800 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 11l-7 7-7-7M12 4v16"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-4">FISCALIZAÇÃO</h3>
+        <p class="text-gray-600 mb-6">O Comité de Auditoria é o órgão do Banco Nacional de Angola responsável pela supervisão dos mecanismos de auditoria interna e externa, dos processos de relatórios financeiros</p>
+      </div>
+      <a (click)="scrollToTop()" routerLink="/supervision" class="text-center mt-6 px-6 py-3 bg-cyan-800 text-white rounded hover:bg-cyan-900 transition">Saiba mais</a>
+    </div>
+
+    <!-- Card 6 -->
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" class="bg-white rounded-lg shadow-lg p-8 flex flex-col justify-between">
+      <div class="text-center">
+        <div class="bg-cyan-800 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v18l7-4 7 4V3l-7 4-7-4z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-4">RELATÓRIO & CONTAS</h3>
+        <p class="text-gray-600 mb-6">De acordo com o Artigo 300º da Lei n.º 14/21, de 19 de Maio, Lei do regime geral das Instituições Financeiras e do Decreto Presidencial nº 111/22 de 13 de Maio, que aprova o regulamento do Fundo de resolução</p>
+      </div>
+      <a (click)="scrollToTop()" routerLink="/report-and-account" class="text-center mt-6 px-6 py-3 bg-cyan-800 text-white rounded hover:bg-cyan-900 transition">Saiba mais</a>
+    </div>
+  </div>
+</div>

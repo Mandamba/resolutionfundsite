@@ -1,0 +1,16 @@
+.banner-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(32, 33, 33, 0.9);
+  z-index: 1;
+}
+.background-image {
+  background-size: cover; /* Cobre todo o componente */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+  filter: brightness(0.8);
+}

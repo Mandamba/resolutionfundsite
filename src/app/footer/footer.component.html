@@ -1,0 +1,102 @@
+<footer #footer class="opacity-0 translate-y-10 transition-transform duration-700 ease-out" data-aos="fade-up" data-aos-duration="1500">
+  <div class="bg-cyan-800 text-white px-6 py-12">
+    <!-- Footer Top -->
+    <div class="container mx-auto">
+      <div class="flex flex-wrap md:flex-nowrap justify-between">
+
+        <!-- Canais de Atendimento -->
+        <div class="w-full md:w-1/2 lg:w-1/4 mb-8" data-aos="fade-right" data-aos-duration="1500">
+          <h4 class="text-lg font-semibold mb-6 text-white">Canais de Atendimento</h4>
+          <p class="text-white mb-4">
+            <span class="material-icons align-middle">phone</span> <!-- Ícone de Telefone -->
+            (+244) 222 679 200
+          </p>
+          <p class="text-white mb-4">
+            <span class="material-icons align-middle">email</span> <!-- Ícone de Email -->
+            comunicacaobna.ao
+          </p>
+          <p class="text-white mb-4">
+            <span class="material-icons align-middle">location_on</span> <!-- Ícone de Localização -->
+            Av. 4 de Fevereiro n.º 151 - Luanda - Angola
+          </p>
+          <p class="text-white">
+            <span class="material-icons align-middle">mail</span> <!-- Ícone de Caixa Postal -->
+            Caixa Postal: 1243
+          </p>
+        </div>
+
+        <!-- Menu Rapido -->
+        <div class="w-full md:w-1/2 lg:w-1/4 mb-8" data-aos="fade-up" data-aos-duration="1500">
+          <h4 class="text-lg font-semibold mb-6 text-white">Menu Rapido</h4>
+          <ul>
+            <li class="mb-4">
+              <a
+              (click)="scrollToTop()"
+               routerLink="/data-protection" class="text-white hover:text-gray-400">
+                <span class="material-icons align-middle">security</span>
+                Protecção de Dados
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+              (click)="redirectToExternalUrl('https://www.bna.ao/#/pt')"
+              routerLink="/contact" class="text-white hover:text-gray-400">
+                <span class="material-icons align-middle">account_balance</span>
+                Banco Nacional de Angola
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+              (click)="redirectToExternalUrl('https://www.fgd.ao/')"
+              routerLink="/services" class="text-white hover:text-gray-400">
+                <span class="material-icons align-middle">attach_money</span>
+                Fundo de Garantia de Depósitos
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+              (click)="redirectToExternalUrl('https://www.minfin.gov.ao/')"
+              routerLink="/privacy-policy" class="text-white hover:text-gray-400">
+                <span class="material-icons align-middle">business</span> <!-- Ícone de Negócio -->
+                Ministério das Finanças
+              </a>
+            </li>
+            <li class="mb-4">
+              <a routerLink="/privacy-policy" class="text-white hover:text-gray-400">
+                <span class="material-icons align-middle">public</span> <!-- Ícone Internacional -->
+                International Association of Deposit Insurers
+              </a>
+            </li>
+            <li class="mb-4">
+              <a routerLink="/privacy-policy" class="text-white hover:text-gray-400">
+                <span class="material-icons align-middle">trending_up</span> <!-- Ícone de Estabilidade -->
+                Financial Stability Board
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Nossa Localizacao -->
+        <div class="w-full md:w-1/2 lg:w-1/4 mb-8" data-aos="fade-left" data-aos-duration="1500">
+          <h4 class="text-lg font-semibold mb-6 text-white">Nossa Localizacao a partir do Google Map</h4>
+          <div class="w-full h-64">
+            <!-- Google Maps Embed -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3182.6683711153326!2d-122.08424968571659!3d37.42199977982061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbb7fe7b2d3a5%3A0x5177e99ff383fb51!2sGoogleplex!5e0!3m2!1sen!2sus!4v1623843628560!5m2!1sen!2sus"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+  </div>
+  <div class="bg-black text-white border-t border-gray-1000 py-8"data-aos-duration="1500">
+    <div class="container mx-auto flex flex-wrap items-center justify-between">
+      <a routerLink="/" class="flex items-center mb-4 md:mb-0">
+        <img src="images/logo.png" alt="Logo" class="hidden dark:block h-12">
+        <img src="/images/logo.png" alt="Logo" class="block dark:hidden h-12">
+      </a>
+      <p class="text-white text-lg text-center md:text-left">&copy; {{ currentYear }} Fundo de Resolucao. Todos direitos reservados.</p>
+    </div>
+  </div>
+</footer>

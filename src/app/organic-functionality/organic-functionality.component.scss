@@ -1,0 +1,12 @@
+.flex {
+  display: flex;
+  align-items: flex-start; /* Garante que a imagem e o texto estejam alinhados no topo */
+}
+
+img {
+  margin-left: 0; /* Remove a margem à esquerda da imagem */
+}
+
+.text-gray-600 {
+  line-height: 1.6; /* Melhora a legibilidade do texto */
+}

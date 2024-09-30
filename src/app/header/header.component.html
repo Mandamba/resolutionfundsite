@@ -1,0 +1,220 @@
+<header
+  class="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 z-50 shadow-md transition-all duration-300 ease-in-out"
+  [ngClass]="{ 'bg-gray-900 text-white shadow-lg': stickyMenu }"
+>
+  <div
+    class="container mx-auto flex flex-wrap justify-between items-center py-6 px-4 sm:px-6 lg:px-8"
+  >
+    <div class="flex items-center">
+      <a
+        routerLink="/"
+        class="focus:outline-none focus:ring-0 focus:ring-offset-0 cursor-pointer"
+      >
+        <img
+          class="h-12 sm:h-16 dark:hidden transition-transform duration-300 ease-in-out transform hover:scale-105"
+          src="/images/logo.png"
+          alt="Logo Light"
+        />
+        <img
+          class="hidden dark:block h-12 sm:h-16 transition-transform duration-300 ease-in-out transform hover:scale-105"
+          src="/images/logo-dark.svg"
+          alt="Logo Dark"
+        />
+      </a>
+      <button
+        class="ml-4 lg:hidden focus:outline-none focus:ring-0 cursor-pointer"
+        (click)="toggleNavigation()"
+      >
+        <span class="block relative w-8 h-8">
+          <span
+            class="block w-full h-0.5 bg-black dark:bg-white transition-transform duration-300 ease-in-out"
+            [ngClass]="{ 'rotate-45 translate-y-2': navigationOpen }"
+          ></span>
+          <span
+            class="block w-full h-0.5 bg-black dark:bg-white mt-1 transition-opacity duration-300 ease-in-out"
+            [ngClass]="{ 'opacity-0': navigationOpen }"
+          ></span>
+          <span
+            class="block w-full h-0.5 bg-black dark:bg-white mt-1 transition-transform duration-300 ease-in-out"
+            [ngClass]="{ '-rotate-45 -translate-y-2': navigationOpen }"
+          ></span>
+        </span>
+      </button>
+    </div>
+    <div
+      class="fixed top-0 left-0 w-3/4 h-full bg-white dark:bg-gray-900 shadow-lg transition-transform duration-300 ease-in-out transform lg:hidden"
+      [ngClass]="{
+        'translate-x-0': navigationOpen,
+        '-translate-x-full': !navigationOpen
+      }"
+      style="padding-right: 1rem; padding-left: 1rem"
+    >
+      <div class="flex items-left justify-left py-4">
+        <img src="/images/logo.png" alt="Logotipo" class="h-12 w-auto" />
+      </div>
+
+      <button
+        class="absolute top-4 right-4 text-gray-700 dark:text-white focus:outline-none focus:ring-0"
+        (click)="toggleNavigation()"
+      >
+        <svg
+          class="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+      <div class="flex flex-col py-8 space-y-6">
+        <a
+          [routerLink]="['/']"
+          fragment=""
+          routerLinkActive="active"
+          class="nav-link"
+          [ngClass]="{ active: isActive('/') }"
+          (click)="navigateTo('/')"
+        >
+          HOME
+        </a>
+        <a
+          [routerLink]="['/']"
+          fragment="fund"
+          class="nav-link"
+          routerLinkActive="active"
+          class="nav-link"
+          [ngClass]="{ active: isActive('/fund') }"
+          (click)="navigateTo('/fund')"
+        >
+          O FUNDO
+        </a>
+        <a
+          [routerLink]="['/']"
+          fragment="announcements"
+          routerLinkActive="active"
+          class="nav-link"
+          [ngClass]="{ active: isActive('/announcements') }"
+          (click)="navigateTo('/announcements')"
+        >
+          COMUNICADOS
+        </a>
+        <a
+          routerLink="/applicable-lagislation"
+          routerLinkActive="active"
+          class="nav-link"
+          [ngClass]="{ active: isActive('/applicable-lagislation') }"
+          (click)="navigateTo('/applicable-lagislation')"
+        >
+          LEGISLAÇÃO APLICÁVEL
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+
+    <div class="hidden lg:flex items-center space-x-6 xl:space-x-10">
+      <nav>
+        <ul class="flex space-x-6 xl:space-x-10">
+          <li>
+            <a
+              routerLink="/"
+              routerLinkActive="active"
+              class="text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-gray-400 focus:outline-none cursor-pointer text-base sm:text-lg relative"
+              [ngClass]="{ active: isActive('/') }"
+              (click)="setActive('/')"
+            >
+              HOME
+              <span
+                class="absolute bottom-[-6px] left-0 block w-full h-1 bg-cyan-800 shadow-md transition-all duration-300 ease-in-out"
+                [ngClass]="{ 'w-full': isActive('/') }"
+              >
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              [routerLink]="['/']"
+              fragment="fund"
+              class="text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-gray-400 focus:outline-none cursor-pointer text-base sm:text-lg relative"
+            >
+              O FUNDO
+              <span
+                class="absolute bottom-[-6px] left-0 block w-full h-1 bg-cyan-800 shadow-md transition-all duration-300 ease-in-out"
+                [ngClass]="{ 'w-full': isActive('/fund') }"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a
+              [routerLink]="['/']"
+              fragment="announcements"
+              class="nav-link"
+            >
+              COMUNICADOS
+            </a>
+          </li>
+          <li>
+            <a
+              routerLink="/applicable-lagislation"
+              class="text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-gray-400 focus:outline-none cursor-pointer text-base sm:text-lg relative"
+              [ngClass]="{ active: isActive('/applicable-lagislation') }"
+              (click)="setActive('/applicable-lagislation')"
+            >
+              LEGISLAÇÃO APLICÁVEL
+              <span
+                class="absolute bottom-[-6px] left-0 block w-full h-1 bg-cyan-800 shadow-md transition-all duration-300 ease-in-out"
+                [ngClass]="{ 'w-full': isActive('/applicable-lagislation') }"
+              ></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" (change)="toggleDarkMode()" class="hidden" />
+          <svg
+            *ngIf="darkMode"
+            class="h-8 w-8 bg-cyan-800 transition-transform duration-300 ease-in-out"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17.657 16.657A8 8 0 1116.657 7.07M12 12v.01"
+            />
+          </svg>
+        </label>
+        <a
+          [routerLink]="['/']"
+          fragment="contact"
+          routerLinkActive="active"
+          class="bg-cyan-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-800 cursor-pointer flex items-center space-x-2 mr-4 sm:mr-8"
+        >
+          <svg
+            class="h-5 w-5 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+          <span class="material-icons align-middle">phone</span>
+          <span>CONTACTE-NOS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

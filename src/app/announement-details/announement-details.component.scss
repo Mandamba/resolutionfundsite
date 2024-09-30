@@ -1,0 +1,136 @@
+.description-grid {
+  column-count: 3;
+}
+.announcement-info{
+  margin-left: 2rem;
+}
+.description-grid p {
+  margin-bottom: 1rem;
+  margin-left: -10rem;
+  margin-right: auto;
+}
+
+.description-grid {
+  justify-content: flex-start;
+}
+
+.description-grid p {
+  margin-bottom: 1rem;
+  margin-left: 0;
+}
+
+.relative img {
+  width: 100%;
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 480px) {
+  .relative {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .relative img {
+    width: 100%; /* Faz com que a imagem ocupe toda a largura disponível */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+
+  .description-grid {
+    column-count: 1; /* Reduz para uma coluna em telas muito pequenas */
+    font-size: 0.75rem; /* Ajusta o tamanho da fonte para telas muito pequenas */
+  }
+
+  .announcement-info {
+    margin-left: 0; /* Remove margem esquerda extra em telas muito pequenas */
+  }
+}
+
+/* Estilo para telas pequenas */
+@media (max-width: 768px) {
+  .relative {
+    margin-left: 0; /* Remove qualquer margem à esquerda em telas pequenas */
+    margin-right: 0; /* Remove qualquer margem à direita em telas pequenas */
+    text-align: center; /* Centraliza o conteúdo */
+  }
+
+  .relative img {
+    width: 100%; /* Faz com que a imagem ocupe toda a largura disponível */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+
+  .description-grid {
+    column-count: 1; /* Reduz para uma coluna em telas pequenas */
+    font-size: 0.875rem; /* Ajusta o tamanho da fonte para telas pequenas */
+  }
+
+  .announcement-info {
+    margin-left: 0; /* Remove margem esquerda extra em telas pequenas */
+  }
+}
+
+/* Estilo para telas médias */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .relative {
+    margin-left: 0; /* Remove a margem esquerda extra */
+    margin-right: 0; /* Remove qualquer margem à direita */
+  }
+
+  .relative img {
+    width: 100%; /* Ajusta a largura da imagem para telas médias */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+
+  .description-grid {
+    column-count: 2; /* Ajusta o número de colunas para telas médias */
+    column-width: 250px; /* Define uma largura mínima para cada coluna */
+  }
+}
+
+/* Estilo para telas grandes */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .relative {
+    margin-left: 0; /* Remove a margem esquerda extra */
+    margin-right: 0; /* Remove qualquer margem à direita */
+  }
+
+  .relative img {
+    width: 100%; /* Ajusta a largura da imagem para telas grandes */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+
+  .description-grid {
+    column-count: 2; /* Ajusta o número de colunas para telas grandes */
+    column-width: 300px; /* Define uma largura mínima para cada coluna */
+  }
+}
+
+/* Estilo para telas muito grandes */
+@media (min-width: 1441px) {
+  .relative {
+    margin-left: 0; /* Remove a margem esquerda extra */
+    margin-right: 0; /* Remove qualquer margem à direita */
+  }
+
+  .relative img {
+    width: 120%; /* Ajusta a largura da imagem para telas muito grandes */
+    height: 80%;
+    margin-left: -10rem;
+  }
+
+
+  .sub-title{
+    margin-left: -10rem;
+  }
+  .title{
+    margin-left: -10rem;
+  }
+}
+.card:nth-child(1) { animation-delay: 0s; }
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.2s; }
+/* Continue for other cards */

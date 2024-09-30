@@ -1,0 +1,10 @@
+<div
+  [ngClass]="{'bg-gradient-to-r from-cyan-700 to-stone-500 rounded-lg shadow-lg': !backgroundImage}"
+  [ngStyle]="backgroundImage ? {'background-image': 'url(' + backgroundImage + ')'} : {}"
+  class="text-white py-16 px-12 md:px-20 lg:px-28 mb-16 bg-cover bg-center"
+>
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-4xl font-extrabold mb-6">{{ title }}</h2>
+    <p class="text-2xl mb-10">{{ description }}</p>
+  </div>
+</div>
