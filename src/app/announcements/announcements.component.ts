@@ -5,11 +5,14 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Router } from '@angular/router';
 import { AnnounementDetailsComponent } from '../announement-details/announement-details.component';
 import { BannerInfoCardComponent } from '../banner-info-card/banner-info-card.component';
+import { SharepointService } from '../services/sharepointService';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-announcements',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive, AnnounementDetailsComponent, BannerInfoCardComponent],
+  imports: [CommonModule, RouterLink, RouterLinkActive,
+    AnnounementDetailsComponent, BannerInfoCardComponent, HttpClientModule ],
   templateUrl: './announcements.component.html',
   styleUrl: './announcements.component.scss',
   animations: [
@@ -25,6 +28,7 @@ import { BannerInfoCardComponent } from '../banner-info-card/banner-info-card.co
   ]
 })
 export class AnnouncementComponent {
+  anouncementList : any[] = []
   date : Date = new Date()
   isLoading = false;
   selectedAnnouncement: any = null;
@@ -39,10 +43,11 @@ export class AnnouncementComponent {
     // Adicione mais announcements aqui conforme necessário
   ];
 
-  constructor(private router : Router){
+  constructor(private router : Router, private service : SharepointService){
 
   }
   ngOnInit(): void {
+    this.loadItems()
     this.loadAnnouncements();
     this.loadRecentAnnouncements();
   }
@@ -115,5 +120,17 @@ export class AnnouncementComponent {
   }
   loadMore(): void {
     this.loadAnnouncements();
+  }
+  loadItems(): void {
+    this.service.fetchAnouncements().subscribe({
+      next: (data) => {
+        console.log(data,"comunicados")
+        this.anouncementList = data.value;
+      },
+      error: (err) => {
+        //this.error = 'Erro ao carregar itens';
+        //this.loading = false;
+      }
+    });
   }
 }
