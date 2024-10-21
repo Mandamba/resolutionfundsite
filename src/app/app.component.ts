@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component} from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
-import { FundComponent } from './fund/fund.component';
-import { FooterComponent } from "./footer/footer.component";
-import { ContactComponent } from './contact/contact.component';
 import AOS from 'aos'
+import { HeaderComponent } from './core/shared/header/header.component';
+import { FundComponent } from './core/shared/fund/fund.component';
+import { FooterComponent } from './core/shared/footer/footer.component';
+import { ContactComponent } from './core/shared/contact/contact.component';
 @Component({
   selector: 'app-root',
   standalone: true,

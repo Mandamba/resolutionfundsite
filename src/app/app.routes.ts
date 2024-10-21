@@ -1,18 +1,18 @@
 // src/app/app.routes.ts
 
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
-import { AnnounementDetailsComponent } from './announement-details/announement-details.component';
-import { DataProtectionComponent } from './data-protection/data-protection.component';
-import { ParticipantsEntitiesComponent } from './participants-entities/participants-entities.component';
-import { LegislationComponent } from './legislation/legislation.component';
-import { MainBannerComponent } from './main-banner/main-banner.component';
-import { MissionComponent } from './mission/mission.component';
-import { OrganicFunctionalityComponent } from './organic-functionality/organic-functionality.component';
-import { FinantialResourcesComponent } from './finantial-resources/finantial-resources.component';
-import { SupervisionComponent } from './supervision/supervision.component';
-import { ReportsAndAccountsComponent } from './reports-and-accounts/reports-and-accounts.component';
+import { HomeComponent } from './core/shared/home/home.component';
+import { ContactComponent } from './core/shared/contact/contact.component';
+import { AnnounementDetailsComponent } from './core/shared/announement-details/announement-details.component';
+import { MainBannerComponent } from './core/shared/main-banner/main-banner.component';
+import { DataProtectionComponent } from './core/shared/data-protection/data-protection.component';
+import { ParticipantsEntitiesComponent } from './core/shared/participants-entities/participants-entities.component';
+import { LegislationComponent } from './core/shared/legislation/legislation.component';
+import { MissionComponent } from './core/shared/mission/mission.component';
+import { OrganicFunctionalityComponent } from './core/shared/organic-functionality/organic-functionality.component';
+import { FinantialResourcesComponent } from './core/shared/finantial-resources/finantial-resources.component';
+import { SupervisionComponent } from './core/shared/supervision/supervision.component';
+import { ReportsAndAccountsComponent } from './core/shared/reports-and-accounts/reports-and-accounts.component';
 
 export const routes: Routes = [
   {
