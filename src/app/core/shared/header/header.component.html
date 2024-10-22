@@ -73,24 +73,28 @@
       </button>
       <div class="flex flex-col py-8 space-y-6">
         <a
-              routerLink="/"
-              routerLinkActive="active"
-              class="text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-gray-400 focus:outline-none cursor-pointer text-base sm:text-lg relative"
-              [ngClass]="{ active: isActive('/') }"
-              (click)="setActive('/')"
-            >
-              HOME
-              <span
-                class="absolute bottom-[-6px] left-0 block w-full h-1 bg-cyan-800 shadow-md transition-all duration-300 ease-in-out"
-                [ngClass]="{ 'w-full': isActive('/') }"
-              >
-              </span>
-            </a>
+          routerLink="/"
+          routerLinkActive="active"
+          class="text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-gray-400 focus:outline-none cursor-pointer text-base sm:text-lg relative"
+          [ngClass]="{ active: isActive('/') }"
+          (click)="setActive('/')"
+        >
+          HOME
+          <span
+            class="absolute bottom-[-6px] left-0 block w-full h-1 bg-cyan-800 shadow-md transition-all duration-300 ease-in-out"
+            [ngClass]="{ 'w-full': isActive('/') }"
+          >
+          </span>
+        </a>
         <a [routerLink]="['/']" fragment="fund" class="text-gray-700 nav-link">
           O FUNDO
         </a>
 
-        <a [routerLink]="['/']" fragment="announcements" class="nav-link text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-gray-400 focus:outline-none cursor-pointer text-base sm:text-lg relative">
+        <a
+          [routerLink]="['/']"
+          fragment="announcements"
+          class="nav-link text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-gray-400 focus:outline-none cursor-pointer text-base sm:text-lg relative"
+        >
           COMUNICADOS
         </a>
         <a
@@ -100,11 +104,56 @@
           [ngClass]="{ active: isActive('/applicable-lagislation') }"
           (click)="navigateTo('/applicable-lagislation')"
         >
-        LEGISLAÇÃO APLICÁVEL
+          LEGISLAÇÃO APLICÁVEL
+        </a>
+      </div>
+      <div class="flex items-center space-x-4">
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" (change)="toggleDarkMode()" class="hidden" />
+          <svg
+            *ngIf="darkMode"
+            class="h-8 w-8 bg-cyan-800 transition-transform duration-300 ease-in-out"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17.657 16.657A8 8 0 1116.657 7.07M12 12v.01"
+            />
+          </svg>
+        </label>
+        <a
+          [routerLink]="['/']"
+          fragment="contact"
+          routerLinkActive="active"
+          class="bg-cyan-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-white cursor-pointer flex items-center space-x-2 mr-4 sm:mr-8"
+        >
+          <!-- Ícone SVG -->
+          <svg
+            class="h-5 w-5 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            />
+          </svg>
+
+          <!-- Material Icons -->
+          <span class="material-icons text-white align-middle">phone</span>
+
+          <!-- Texto -->
+          <span class="text-white">CONTACTE-NOS</span>
         </a>
       </div>
     </div>
-
     <!-- Mobile Menu -->
 
     <div class="hidden lg:flex items-center space-x-6 xl:space-x-10">
@@ -172,33 +221,32 @@
           </svg>
         </label>
         <a
-  [routerLink]="['/']"
-  fragment="contact"
-  routerLinkActive="active"
-  class="bg-cyan-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-white cursor-pointer flex items-center space-x-2 mr-4 sm:mr-8"
->
-  <!-- Ícone SVG -->
-  <svg
-    class="h-5 w-5 text-white"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-    />
-  </svg>
+          [routerLink]="['/']"
+          fragment="contact"
+          routerLinkActive="active"
+          class="bg-cyan-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-white cursor-pointer flex items-center space-x-2 mr-4 sm:mr-8"
+        >
+          <!-- Ícone SVG -->
+          <svg
+            class="h-5 w-5 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            />
+          </svg>
 
-  <!-- Material Icons -->
-  <span class="material-icons text-white align-middle">phone</span>
+          <!-- Material Icons -->
+          <span class="material-icons text-white align-middle">phone</span>
 
-  <!-- Texto -->
-  <span class="text-white">CONTACTE-NOS</span>
-</a>
-
+          <!-- Texto -->
+          <span class="text-white">CONTACTE-NOS</span>
+        </a>
       </div>
     </div>
   </div>
