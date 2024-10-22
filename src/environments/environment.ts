@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://api.seusite.com',
+  apiUrl: 'https://api.resolutionfund.com',
 };
