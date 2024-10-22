@@ -1,8 +1,10 @@
+
 .nav-link {
   position: relative;
   padding-bottom: 0.5rem;
   color: #245e7b;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .nav-link::after {
@@ -16,12 +18,16 @@
   transition: width 0.3s ease-in-out;
 }
 
-/* Apenas links ativos terão sublinhado */
 .nav-link.active::after {
   width: 100%;
 }
 
-/* Remover qualquer sublinhado padrão de links */
+.nav-link:hover::after,
+.nav-link:focus::after {
+  width: 100%;
+}
+
 a {
   text-decoration: none;
+  color: #245e7b;
 }
